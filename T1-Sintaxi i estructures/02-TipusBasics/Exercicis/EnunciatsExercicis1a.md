@@ -92,7 +92,7 @@ Llista amb els tipus de cada element
 
 ## Exercici 5: crear objecte d'usuari.
 
-Per a aquest exercici prendrem les dades que hem fet servir per a l'[Exercici 1](#exercici-1), però
+Per a aquest exercici prendrem les dades que hem fet servir per a l'[Exercici 1](#exercici-1-dades-didentificació), però
 ara, en lloc de ser variables separades, les col·locarem en un objecte, ja que aquest format serà el
 que utilitzarem per treballar amb les dades dels nostres usuaris.
 Al final, igualment imprimirem aquest objecte anomenat { usuari } a la nostra consola.
