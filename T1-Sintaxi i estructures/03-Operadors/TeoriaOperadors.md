@@ -119,7 +119,7 @@ Si no li pots fer un console.log, és una declaration si li pots fer és una exp
 Amb els operadors podem crear expressions i així crear algoritmes per poder solucionar els problemes que hagin de resoldre les nostres aplicacions.
 
 - [Aritmètics](01-aritmetics.js)
-- [Asignació](02-assignacio.js)
+- [Assignació](02-assignacio.js)
 - [Comparació](03-comparacio.js)
 - [Lògics](04-logics.js)
 - [Bitwise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Bitwise_AND) (Poc utilitzat): Fa l'operació logica bit a bit i es fa servir amb un sol símbol | per OR i & per AND
