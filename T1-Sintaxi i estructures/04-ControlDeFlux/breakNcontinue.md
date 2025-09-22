@@ -50,7 +50,7 @@ Les instruccions **`break`** i **`continue`** modifiquen aquest flux.
 ---
 
 ## 🔑 Resum de bones pràctiques
-- **Claror:** Usa `break` i `continue` només quan millorin la llegibilitat.  
+- **Claretat:** Usa `break` i `continue` només quan millorin la llegibilitat.  
 - **Eficiència:** `break` és útil per evitar iteracions innecessàries.  
 - **Neteja:** `continue` pot simplificar condicions, però evita abusar-ne.  
 - **Alternatives:** A vegades, `filter`, `some`, `every` o `find` són millors opcions que un bucle amb `break/continue`.
