@@ -6,7 +6,7 @@ mida màxima permesa pel nostre servidor. Si això no és així, li notificarem 
 fitxer ha excedit la mida màxima.
 
 ### Entrades:
-Definirem 2 variables, una per a la mida del fitxer i una altra per la mida màxima permesa del nostre sistema.
+Definirem 2 variables, una per a la mida del fitxer i una altra per la mida màxima permesa del nostre sistema.****
 ### Sortides:
 Imprimim el text: "El fitxer compleix amb la mida permesa." si ocupa igual o menys de 5 
 MB, o : "El fitxer ha excedit la mida màxima permesa." si ocupa més que aquesta mida.
@@ -82,53 +82,54 @@ Per contra, imprimirem que s'està iniciant el procés, per posteriorment imprim
 nombre de tasses i temps que prendrà.
 
 
-## Exercici 6
-
-Exercici 6: Prestem.
-Com funciona?
-Treballem en un banc que ofereix préstecs a molts clients, alguns tenen un compte 
-amb nosaltres.
-Tindrem un llistat d'usuaris dels quals haurem de determinar la taxa d'interès que els 
-oferirem, basat en la puntuació.
-Primer haurem de determinar si l'usuari té un compte al nostre banc, després 
-haurem de determinar la taxa d'interès depenent de la puntuació de crèdit.
+## Exercici 6 Prèstecs
+Treballem en un banc que ofereix préstecs a molts clients, alguns tenen un compte amb nosaltres.
+Tindrem un llistat d'usuaris dels quals haurem de determinar la taxa d'interès que els oferirem, basat en la puntuació.
+Primer haurem de determinar si l'usuari té un compte al nostre banc, després haurem de determinar la taxa d'interès depenent de la puntuació de crèdit.  
 Considerant que als nostres clients els podrem oferir un descompte del 10% en el préstec, 
 sempre que la taxa no sigui menor a 15%.
-Haurem de determinar , si podem donar-los un préstec o no, i de quant serà la seva taxa d'interès si és  
-que està aprovat.
+Haurem de determinar , si podem donar-los un préstec o no, i de quant serà la seva taxa d'interès si està aprovat.
 ### Entrades: 
 Definirem 3 variables:
-•Una per saber si el sol·licitant té compte.
-•Una altra per a la puntuació de crèdit del sol·licitant.
-•I una taxa d'interès, que estarà buida.
-Per a l'avaluació, tindrem 3 taxes: 10% per a puntuacions de 750 o majors, 15% per a puntuacions d'entre 
-749 a 700, i 10% per a puntuacions de 650 a 699. Si la puntuació és menor que 650, no podrem oferir-los un 
+- Una per saber si el sol·licitant té compte.
+- Una altra per a la puntuació de crèdit del sol·licitant.
+- I una taxa d'interès, que estarà buida.
+  
+Per a l'avaluació, tindrem 3 taxes:
+- 10% per a puntuacions de 750 o majors 
+- 15% per a puntuacions d'entre 749 a 700
+-  i 20% per a puntuacions de 650 a 699.
+-   Si la puntuació és menor de 650, no podrem oferir-los un 
 crèdit.
+Finalment,per aquells que siguin clients i tinguin una taxa resultant igual o superior al 15% els hi podrem oferir un descompte addiconal del 10% sobre la taxa aplicada.
 ### Sortides:
 Haurem d'imprimir a la consola quina serà la taxa d'interès si s'aprova.
 
 
-## Exercici 7
-
-Exercici 7: Alimentador mascota .
-Com funciona?
-Estem automatitzant un alimentador automàtic per a gossos i gats, per això haurem de 
-determinar la quantitat de menjar que alliberarà l'alimentador depenent del pes del nostre pelut 
-o el nostre michi.
+## Exercici 7 Alimentador mascota 
+Estem automatitzant un alimentador automàtic per a gossos i gats, per això haurem de determinar la quantitat de menjar que alliberarà l'alimentador depenent del seu pes i tipus de mascota
 ### Entrades: 
 Tindrem una variable per al tipus de mascota, una altra per al pes, i una altra per a la quantitat de menjar.
+
 Si és un gos, la quantitat de menjar es basa en el pes:
-•Menys de 5 kg → 100g
-•5 – 9,99 kg → 200g
-•10 – 19,99 kg → 300g
-•20 kg o més → 400g
+- Menys de 5 kg → 100g
+- 5 – 9,99 kg → 200g
+- 10 – 19,99 kg → 300g
+- 20 kg o més → 400g   
+  
 Si és un gat, la quantitat de menjar és:
-•Menys de 3 kg → 50g
-•3 – 5,99 kg → 100g
-•6 kg o més → 150g
+- Menys de 3 kg → 50g   
+- 3 – 5,99 kg → 100g
+- 6 kg o més → 150g
 ### Sortides:
 En realitzar les validacions, haurem d'imprimir a la consola la quantitat de grams que tornarà 
 l'alimentador depenent del tipus de mascota corresponent amb el pes.
+
+## Bonus
+
+Si has acabat els exercicis i vols praticar més, fes una versió on els missatges surtin utilitzant document.write o alert per veureu-ho en el navegador, pots nombrar els exercicis com Xnav.js, on X és el numero d'exercici.
+També pots practicar amb prompt per demanar les entrades al navegador.  
+<b> Recorda que aquests exercicis no seràn compatibles amb Nodejs
 
 
 
