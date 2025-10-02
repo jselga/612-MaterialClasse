@@ -1,9 +1,10 @@
 const now = new Date();
-// console.log(now);
+console.log(now);
 const date1 = new Date('December 25 1986 14:15 GMT');
 console.log(date1);
 const date2 = new Date(1986,11,25,14,15);
 console.log(date2);
+console.log();
 
 console.log('datestring',date2.toDateString());
 console.log('timestring',date2.toTimeString());

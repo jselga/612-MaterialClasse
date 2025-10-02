@@ -7,6 +7,7 @@ console.log(
     Math.ceil(15.0001),// 16
     Math.pow(2,3), // 8
     Math.sqrt(9) // 3
+    
 ); 
 console.log(Math.random()); // Nombre pseudo-aleatori (0..1)
 

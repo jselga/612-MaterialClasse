@@ -187,3 +187,6 @@ Execució de la seqüència d’atacs i energies, mostrant els missatges coheren
 - dany rebut,  
 - punts de vida restants,  
 - missatges quan no hi ha prou energia o quan una carta és derrotada.  
+
+##
+Aquests exercicis estan basats en la proposta del curs [Hola Mundo - Ultimate JavaScript](https://academia.holamundo.io/courses/ultimate-javascript).

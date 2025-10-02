@@ -5,12 +5,13 @@ let user = {
         calle: 'Queen st',
         numero: 15,
     },
-    activo: true, 
-    recuperarClave: function(){
+    activo: true,
+    recuperarClau: function () {
         console.log('Recuperant clau...');
-        
+
     },
 
 
 };
+user.recuperarClau();
 

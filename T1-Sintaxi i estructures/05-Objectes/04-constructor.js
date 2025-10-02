@@ -1,4 +1,4 @@
-// En el cas de les funcions contructores es fa servir upperCamel Case amb el nom de la classe com en Java
+// En el cas de les funcions contructores es fa servir UpperCamelCase amb el nom de la classe com en Java
 // {id:1, recuperarClau: function(){}}
 function Usuari(){
     this.id = 1;                    //propietat

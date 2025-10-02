@@ -3,8 +3,8 @@ let user = {
     email: 'nico@holamundo.io',
     name: 'Nicolas',
     activo: true,
-    recuperarClave: function () {
-        console.log('Recuperando clave..-');
+    recuperarClau: function () {
+        console.log('Recuperant clau...');
 
     },
 };
@@ -14,24 +14,26 @@ let user = {
 //     email: 'chanchito@holamundo.io',
 //     name: 'Chanchito',
 //     activo: false, 
-//     recuperarClave: function(){
-//         console.log('Recuperando clave..-');
+//     recuperarClau: function(){
+//         console.log('Reecuperant clau...');
 
 //     },
 // };
 
-function crearUsuario(name,email) {
+function crearUsuari(name, email) {
     return {
         email,
         name,
         activo: true,
-        recuperarClave: function () {
-            console.log('Recuperando clave..-');
+        recuperarClau: function () {
+            console.log('Recuperant clau...');
 
         },
     };
 }
-let user1 = crearUsuario('Chanchito','chanchito@holamundo.io');
-let user2 = crearUsuario('Felipe','felipe@holamundo.io');
+let user1 = crearUsuari('Chanchito', 'chanchito@holamundo.io');
+let user2 = crearUsuari('Felipe', 'felipe@holamundo.io');
 console.log(user1);
 console.log(user2);
+
+
