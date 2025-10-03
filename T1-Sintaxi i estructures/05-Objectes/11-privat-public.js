@@ -15,7 +15,7 @@
     
 // }
 // user.save();
-
+// Amb mètodes privats
 function Usuari(){
     this.name='Nico';
     let log = function(){
