@@ -12,7 +12,7 @@ Punt.call(punt,1,2);
 // Punt.apply(punt,[1,2]);
 console.log(punt);
 
-// No utilitzar new Function (Why?)
+// No utilitzar new Function 
 // const Point = new Function('x','y',`
 //     this.x = x;
 //     this.y = y;

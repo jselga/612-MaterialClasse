@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="UTF-8">
+    <title>
+        Exemple de comunicació
+    </title>
+</head>
+<script type="text/javascript">
+    var filla;
+
+    function obre() {
+        filla = window.open('Exemple3_b.html', '', 'toolbar=yes, width=600, height=300');
+    }
+    function envia() {
+        filla.document.formulari2.dades.value = window.document.formulari1.resultat.value
+    }
+</script>
+
+<body>
+    <form name="formulari1">
+        <input type="Button" value="Nova finestra" onclick="obre();">
+        <input type="text" size="50" name="resultat" id="resultat" value="Comunicació entre finestres" /><br>
+        <input type="Button" value="Envia" onclick="envia();">
+    </form>
+</body>
+
+</html>

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Nova Finestra</title>
+    </head>
+    <body>
+        <form name="formulari2">
+            <input type="text" size="50" name="dades" id="dades"
+             value="Escriu el que vulguis per a enviar a la finestra principal"/>
+        </form>
+        <input type="Button" value="Color" onclick="window.opener.document.bgColor = 'red'";>
+        <input type="Button" value="Envia" onclick="window.opener.document.formulari1.resultat.value = window.document.formulari2.dades.value;">
+
+    </body>
+</html>
+

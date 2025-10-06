@@ -37,6 +37,8 @@ console.log("Evaluant literal i objecte");
 
 console.log(eval(s1), eval(s2));
 // Si volem evaluar s2 hem de fer servir valueOf
+console.log("Fent servir valueOf per s2");
+
 console.log(eval(s2.valueOf()));
 
 

@@ -140,13 +140,10 @@ console.log(suma(2,3)); // 5
 
 Tot i que new Function(...) permet crear funcions a partir de cadenes de text, no es recomana utilitzar-lo habitualment per aquests motius:
 
-Seguretat: és equivalent a fer servir eval, i pot executar codi maliciós si la cadena prové de l’usuari.
-
-Rendiment: el motor de JavaScript ha de compilar la cadena a codi cada vegada.
-
-Limitacions de l’àmbit (scope): les funcions creades amb new Function només tenen accés a les variables globals, no al context local.
-
-Mantenibilitat: barrejar codi dins de cadenes dificulta la lectura i el depurat.
+**Seguretat**: és equivalent a fer servir eval, i pot executar codi maliciós si la cadena prové de l’usuari.  
+**Rendiment**: el motor de JavaScript ha de compilar la cadena a codi cada vegada.  
+**Limitacions** de l’àmbit (scope): les funcions creades amb new Function només tenen accés a les variables globals, no al context local.  
+**Mantenibilitat**: barrejar codi dins de cadenes dificulta la lectura i el depurat.  
 És millor evitar-lo per seguretat, rendiment i claredat de codi   
 📄 Exemple: [07-Function.js](07-Function.js)
 

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="content-type"
+              content="text/html;charset=utf-8">
+        <title>Objecte Document</title>
+    </head>
+    <body>
+        <p> JavaScript proporciona una sèrie d’objetes que permeten manipular 
+            diferents caracterítiques del navegador en si mateix. </p>
+        <p>Objectes relacionats amb el navegador:
+            Windows, Screen, Document, History, Location, Navigator </p>
+
+        <script type="text/javascript">
+            do {
+                color_fons = prompt("Canviar el color de la fon \n (red, green, yellow, blue): ", "red");
+                if (color_fons){
+                    color_fons = color_fons.toLowerCase();
+                }
+            } while ((color_fons != "red") && (color_fons != "green") && (color_fons != "yellow")
+                    && (color_fons != "blue") && color_fons != "" && color_fons != null);
+            if (!color_fons) {
+                document.write("Final");
+            } else {
+                document.write("Color canviat a " + color_fons);
+                document.fgColor = "white";
+                document.bgColor = color_fons;
+//		a = confirm("color canviat");
+            }
+        </script>
+    </body>
+</html>
+
+

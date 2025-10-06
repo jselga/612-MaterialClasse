@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script>
+        function amagaDiv() {
+            var div = document.getElementById("exe1");
+            var val = div.style.display;
+            div.style.backgroundColor ='#ff5678';
+            div.style.display = (val == "none") ? "block" : "none";
+            return false;
+        }
+
+        function exercici1() {
+            var sol = prompt("Hola");
+            var ele = document.getElementById("Sol1");
+            ele.innerHTML = sol;
+        }
+    </script>
+</head>
+
+<body>
+
+
+    <script type="text/javascript">
+        document.write(`Valors de les propietats de l'objecte screen:<br>`);
+        document.write('availHeight :' + screen.availHeight + '<br>');
+        document.write('availWidth :' + screen.availWidth + '<br>');
+        document.write('height :' + screen.height + '<br>');
+        document.write('width :' + screen.width + '<br>');
+        document.write('colorDepth :' + screen.colorDepth);
+        
+    </script>
+
+    <p id="demo"></p>
+    <script>
+        var w = window.innerWidth
+            || document.documentElement.clientWidth
+            || document.body.clientWidth;
+        var wo = window.outerWidth
+
+        var h = window.innerHeight
+            || document.documentElement.clientHeight
+            || document.body.clientHeight;
+        var ho = window.outerHeight
+
+        var x = document.getElementById("demo");
+        x.innerHTML =
+            "Browser inner window width: " + w + ", height: " + h + ".<br />" +
+            "Browser outer window width: " + wo + ", height: " + ho + "."
+
+    </script>
+
+
+    <div>
+        <a href="" onclick="amagaDiv(); return false"> Exemple Amaga Div </a>
+        <p></p>
+        <div style="border:thin solid" id="exe1">
+            Contenido <br />
+            <button name="Exe1" onclick="exercici1();"> click me!</button>
+            <p id="Sol1">Solucion</p>
+
+        </div>
+    </div>
+    <p> Fin </p>
+
+</body>
+
+</html>
