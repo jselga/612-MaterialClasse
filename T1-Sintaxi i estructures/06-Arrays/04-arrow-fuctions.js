@@ -2,7 +2,7 @@
 //     return 'Hola món';
 // }
 // Fat arrow functions Funció anònima, s'ha d'assignar a una variable o constant
-// const hola = ()=>{
+// const hola = ()=> {
 //  return 'Hola món';
 // }
 

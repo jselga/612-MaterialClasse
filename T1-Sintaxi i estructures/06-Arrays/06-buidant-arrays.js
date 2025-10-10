@@ -1,12 +1,15 @@
 // let arr = [1, 2];
 // let arr2 = arr;
-// arr = [];
+// arr2 = [];
 // console.log(arr2,arr);
+
 
 // Forma comú
 // let arr = [1, 2];
 // arr.length =0;
 // console.log(arr);
+
+
 
 // Forma explícita
 // let arr = [1, 2];
