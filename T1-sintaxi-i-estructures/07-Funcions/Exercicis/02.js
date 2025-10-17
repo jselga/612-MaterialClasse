@@ -1,3 +1,7 @@
+// Implementa `extendre(user)` que afegeixi a l’objecte rebut 
+// els mètodes `login()` i `logout()`
+//  i en retorni la versió ampliada.
+// Pista: Crea els mètodes i fes servir Object.assign
 const obj = {
     nom: 'Nicolas',
 };

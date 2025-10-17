@@ -1,3 +1,7 @@
+//Extén un objecte existent afegint-hi els mètodes
+//  `login()` i `logout()` sense crear una classe. 
+// Fes-ho mitjançant una funció que, aplicada amb `call`, 
+// incorpori aquests mètodes a l'objecte rebut.
 const obj = {
     nom: 'Nicolas',
 };
