@@ -14,7 +14,7 @@ function suma(a, b) {
 }
 // // Si falta un argument p.e.: 
 // console.log(suma(1));
-// // surt NaN pq fa 1 + undifinded
+// // surt NaN pq fa 1 + undefined
 // // Si tenim més arguments que els previstos
 console.log(suma(1, 2, 3, 4, 5));
 // //ignora els que no necessita

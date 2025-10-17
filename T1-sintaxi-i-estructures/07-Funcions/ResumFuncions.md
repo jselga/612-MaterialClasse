@@ -183,7 +183,7 @@ console.log(persona.nom); // "Marta"
 ---
 
 ### 10. Gestió d’errors amb `try…catch`
-Les funcions poden **llançar** errors amb `throw`. Controla’ls amb `try…catch` (i opcionalment `finally`).
+Les funcions poden **llançar** excepcions amb `throw` i mostrar errors. Controla’ls amb `try…catch` (i opcionalment `finally`).
 ```js
 function dividir(a, b) {
   if (b === 0) throw new Error("No es pot dividir per zero");
@@ -195,55 +195,108 @@ try {
   console.log("Error:", e.message);
 }
 ```
+Si vols mostrar els errors de manera elegant pots fer servir [SweetAlert2](https://sweetalert2.github.io/)  
 🧩 Exemple: [10-try-catch.js](./10-try-catch.js)  
-[📘 Referència — MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/try...catch)
+[📘 MDN — Try...catch ](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/try...catch)  
+[🚀 Sentry.io — Plataforma per Centralitzar Errors ](https://sentry.io/)
 
 ---
 
 ### 11. `this` bàsic
-`this` apunta al **context d’execució**. Depèn de com s’invoca la funció.
+La paraula reservada this fa referència al context d’execució actual, és a dir, a l’objecte que “posa en marxa” la funció. El seu valor depèn de com s’invoca la funció:
+| Context                                    | Valor de `this`                                |
+| ------------------------------------------ | ---------------------------------------------- |
+| Dins d’un **mètode d’un objecte**          | L’objecte mateix                               |
+| En una **funció normal**                   | `window` (al navegador) o `global` (a Node.js) |
+| En una **funció constructora** (amb `new`) | El nou objecte creat                           |
+
 ```js
-function mostra() { console.log(this.mode); }
-const obj = { mode: "dark", mostra };
-obj.mostra();        // "dark" (this = obj)
-mostra();            // en mode estricte: undefined; fora: objecte global
+// Dins d’un objecte
+const cotxe = {
+  marca: 'Toyota',
+  mostrar() {
+    console.log(this.marca); // → "Toyota"
+  }
+};
+cotxe.mostrar();
+
+// Fora d’un objecte (funció normal)
+function mostrarMarca() {
+  console.log(this); // → window (navegador) o global (node.js)
+}
+mostrarMarca();
+
+// Amb constructor
+function Cotxe(marca) {
+  this.marca = marca;
+  console.log(this); // → nova instància 
+}
+const c1 = new Cotxe('Honda'); // → Cotxe { marca: 'Honda' }
 ```
 🧩 Exemple: [11-this.js](./11-this.js)  
-[📘 Referència — MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/this)
+[📘 MDN — this ](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/this)
 
 ---
 
-### 12. `this` i context (mètodes, esdeveniments, fletxa)
-Les fletxa **hereten** el `this` extern; els mètodes defineixen `this` pel receptor; en *handlers* sovint cal fixar el context.
+### 12. Context de `this` 
+Les arrow functions **"hereten"** el `this` extern; els mètodes defineixen `this` pel receptor.
 ```js
-const app = {
-  nom: "Demo",
-  init() {
+const usuari = {
+  nom: 'Laura',
+  saluda() {
+    // Funció normal
+    setTimeout(function() {
+      console.log(this.nom); //  undefined (this apunta a window/global)
+    }, 500);
+
+    // Arrow function
     setTimeout(() => {
-      console.log(this.nom);
-    }, 0);
+      console.log(this.nom); //  "Laura" (hereta el this de saluda)
+    }, 1000);
   }
 };
-app.init();
+
+usuari.saluda();
 ```
 🧩 Exemple: [12-this-context.js](./12-this-context.js)  
-[📘 Referència — MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions#no_binding_of_this)
+[📘 MDN — Arrow function ](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions)
 
 ---
 
 ### 13. Canviant el context de `this` (`call`, `apply`, `bind`)
-Força el `this` d’una funció o crea versions *bindejades*.
-```js
-function info(prefix) { console.log(prefix, this.nom); }
-const u = { nom: "Marta" };
+Quan una funció es crida fora del seu objecte, el valor de `this` pot perdre’s (per exemple, passar a window o undefined).  
+Els mètodes `call()`, `apply()` i `bind()` permeten fixar manualment el valor de `this` perquè la funció s’executi amb el context desitjat.
+| Mètode                           | Què fa                                   | Arguments |
+| :------------------------------- | :--------------------------------------- |  :-------------------- |
+| `call(thisArg, arg1, arg2, ...)` | Crida la funció amb el `this` indicat     | Arguments separats    |
+| `apply(thisArg, [args])`         | Crida la funció amb el `this` indicat     | Array d’arguments     |
+| `bind(thisArg)`                  | Retorna una nova funció amb `this` fixat  | Es passen després     |
 
-info.call(u, ">");
-info.apply(u, ["*"]);
-const infoU = info.bind(u);
-infoU("#");
+```js
+function presentar(salutacio, lloc) {
+  console.log(`${salutacio}, sóc ${this.nom} de ${lloc}`);
+}
+
+const persona = { nom: 'Aina' };
+
+//  call → passa els arguments un a un
+presentar.call(persona, 'Hola', 'Girona'); 
+// → "Hola, sóc Aina de Girona"
+
+//  apply → passa els arguments com un array
+presentar.apply(persona, ['Bon dia', 'Barcelona']); 
+// → "Bon dia, sóc Aina de Barcelona"
+
+//  bind → retorna una nova funció amb el this fixat
+const presentarAina = presentar.bind(persona);
+presentarAina('Ei', 'Tarragona'); 
+// → "Ei, sóc Aina de Tarragona"
+
 ```
 🧩 Exemple: [13-canviant-context-this.js](./13-canviant-context-this.js)  
-[📘 Referència — MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function)
+[📘 MDN — call()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/call)  
+[📘 MDN — apply()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/apply)  
+[📘 MDN — bind()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/bind)
 
 ---
 
