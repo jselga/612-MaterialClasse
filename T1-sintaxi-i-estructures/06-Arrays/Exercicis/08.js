@@ -10,7 +10,7 @@ function getPaidUsers(usrs){
 
 }
 const pagaments = getPaidUsers(usuaris);
-// Ordena els pagaments amb
+// Ordena els pagaments amb sort per edat
 console.log(pagaments);
 // construeix els elements d'una llista en html amb <li></li>
 // construeix una llista no ordenada amb <ul></ul>
