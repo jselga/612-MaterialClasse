@@ -20,7 +20,7 @@ class User {
             return this.#name;
         };
 }
-const u = new User('Chanchito Feliz');
+const u = new User('Miquel Pérez');
 // u['#name']='lala'; // Es crea una nova propietat #name amb el valor 
 // assignat però això pot portar a confusió. Evitar fer-ho!
 // console.log(u.#name); // SyntaxError: Private field '#name' must be declared in an enclosing class

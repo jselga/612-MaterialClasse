@@ -1,5 +1,5 @@
 class Restaurants {
-    static qty = 12;
+    static qty = 0;
     constructor(name){
         this.name = name;
     }
@@ -8,7 +8,7 @@ class Restaurants {
         
     }
    static getRestaurant(id){
-
+            Restaurants.qty++
     return new Restaurants('BBQ')
     }
 }

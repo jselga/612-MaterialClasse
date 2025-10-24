@@ -26,10 +26,19 @@ class User {
 // Object.setPrototypeOf(User.prototype, Entity);
 
 // // Finalment si volem fer una composició com a mixin
-const newProto = Object.assign({},Entity,Updating);
+const newProto = Object.assign({}, Entity, Updating);
 Object.setPrototypeOf(User.prototype, newProto);
 
 const u = new User('John Doe');
 
 console.log(u);
 u.save();
+
+const Volador = { volar() { console.log('volo!'); } };
+const Regenaracio = {
+    regenerar() { console.log('Em regenero!'); }
+};
+class Superheroi { }
+const mixin = Object.assign({}, Volador, Regenaracio);
+Object.assign(Superheroi.prototype, Volador, Regenaracio);
+Object.setPrototypeOf(Superheroi.prototype, mixin);

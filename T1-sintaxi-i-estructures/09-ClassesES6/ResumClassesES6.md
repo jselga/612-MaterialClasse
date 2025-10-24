@@ -5,11 +5,16 @@
 ## Conceptes i accions amb Classes ES6
 
 ### 1. Classes
-Les **classes** proporcionen una sintaxi clara sobre el model de prototips per definir **constructors** i **mètodes d'instància**.
+Les **classes** proporcionen una sintaxi clara sobre el model de prototips per definir **constructors**, **propietats** i **mètodes**.
 ```js
 class Persona {
-  constructor(nom) { this.nom = nom; }   // constructor
-  saludar() { console.log(`Hola, sóc ${this.nom}`); } // mètode d'instància
+  constructor(nom) {  // constructor
+    this.nom = nom; 
+    this.caminar = function(){} // mètode d'instància
+    }  
+  saludar() { // mètode de prototip
+     console.log(`Hola, sóc ${this.nom}`); 
+  } 
 }
 ```
 🧩 Exemple: [01-classes.js](./01-classes.js)  
@@ -18,7 +23,8 @@ class Persona {
 ---
 
 ### 2. Membres privats
-Els **camps/mètodes privats** (prefix `#`) només són accessibles dins de la classe: útils per a **encapsulació**.
+Amb les classes ES6 es poden encapsular **camps i mètodes** perquè siguin **privats**: Utilitzant  el prefix `#`.  
+ D'aquesta manera només seran accessibles dins de la classe.
 ```js
 class Compte {
   #saldo = 0;
@@ -32,20 +38,29 @@ class Compte {
 ---
 
 ### 3. Mètodes estàtics
-Un **mètode estàtic** pertany a la classe (no a la instància) i es crida com `Classe.metode()`.
+Un **mètode estàtic** pertany a la classe (no a la instància ni al prototip) i es crida com `Classe.metode()`.
 ```js
 class Util {
   static suma(a, b) { return a + b; }
 }
 console.log(Util.suma(2, 3));
 ```
+| Tipus de mètode        | On s’emmagatzema               | Accessible des de instàncies? | Exemple típic                   |
+| ---------------------- | ------------------------------ | ----------------------------- | ------------------------------- |
+| **D’instància (this)** | A l’objecte instància          | ✅ Sí                          | Assignat dins `constructor`     |
+| **De prototip**        | `Classe.prototype`             | ✅ Sí                          | Definició normal dins `class`   |
+| **Estàtic**            | `Classe` (funció constructora) | ❌ No                          | `Math.random()`, `Array.from()` |
+
+
 🧩 Exemple: [03-static.js](./03-static.js)  
 [📘 MDN — Static](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/static)
+
 
 ---
 
 ### 4. Getters i Setters
-Controlen l’accés i la validació en **lectura** (`get`) i **escriptura** (`set`) de propietats.
+De la mateixa manera que en Java tenim els mètodes que ens serveixen per accedir a les propietats **privades** i modificar-les. A JavaScript ho podem fer amb les paraules reservades (`get`) **lectura**  i (`set`) **escriptura**.   
+Cal tenir en compte que la propietat no es pot dir igual que els mètodes. 
 ```js
 class Persona {
   constructor(nom) { this._nom = nom; }
@@ -59,11 +74,18 @@ class Persona {
 ---
 
 ### 5. Herència
-`extends` crea una subclasse; **`super()`** invoca el constructor/mètode del pare.
+Per heretar una classe fem servir `extends` que  crea una subclasse. Per accedir al constructor de la classe pare fem servir **`super()`**. 
 ```js
-class Animal { sonar(){ console.log('so genèric'); } }
+class Animal { 
+  constructor(nom){
+      this.nom=nom;    
+  }
+  sonar(){}
 class Gos extends Animal {
-  sonar(){ console.log('borda'); } // sobreescriptura
+  constructor(nom,pelatge){
+    super(nom);
+    this.pelatge=pelatge;
+  }
 }
 ```
 🧩 Exemple: [05-herencia.js](./05-herencia.js)  
@@ -74,13 +96,22 @@ class Gos extends Animal {
 ### 6. Method override
 Una subclasse pot **sobreescriure** mètodes del pare per canviar el comportament.
 ```js
-class Logger { log(m){ console.log('LOG:', m); } }
-class Debugger extends Logger {
-  log(m){ console.debug('DEBUG:', m); } // override
+class Animal { 
+  constructor(nom){
+      this.nom=nom;    
+  }
+  sonar(){ console.log('so genèric'); }
+}
+class Gos extends Animal {
+  constructor(nom,pelatge){
+    super(nom);
+    this.pelatge=pelatge;
+  }
+  sonar(){ console.log('bordar'); // Override}
 }
 ```
 🧩 Exemple: [06-method-override.js](./06-method-override.js)  
-[📘 MDN — Override](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Classes/extends#sobre_escritura_de_m%C3%A9todos)
+[📘 MDN — Override](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/extends)
 
 ---
 
@@ -88,8 +119,13 @@ class Debugger extends Logger {
 Un **mixin** “barreja” comportaments en una classe sense heretar d’ella, normalment amb `Object.assign` o `Object.setPrototypeOf`  sobre `prototype`.
 ```js
 const Volador = { volar(){ console.log('volo!'); } };
+const Regenaracio = {
+   regenerar(){ console.log('Em regenero!'); } 
+   };
 class Superheroi {}
-Object.assign(Superheroi.prototype, Volador);
+const mixin = Object.assign({},Volador,Regenaracio);
+Object.assign(Superheroi.prototype, Volador,Regenaracio);
+Object.setPrototypeOf(Superheroi.prototype,mixin);
 ```
 🧩 Exemple: [07-mixins.js](./07-mixins.js)  
 [📘 MDN — Object.assign](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/assign)  
