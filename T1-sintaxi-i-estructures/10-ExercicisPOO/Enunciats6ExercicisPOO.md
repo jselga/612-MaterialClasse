@@ -116,13 +116,15 @@ function Equip(nom, model, fabricant, distribuidor, potencia) {
 22. Defineix una constructora `General` amb propietat `garantia` amb valor per defecte 1 i mètode `dObj` que reutilitza la funció `dObj` creada al punt 4.
 
 
-23. Fes que `Fabricant`, `Distribuidor` i `Equip` **heretin** de `General`. 
+23. Fes que `Fabricant`, `Distribuidor` i `Equip` **heretin** de `General`.   
+  
 
 Comprova que totes les instàncies disposen de la propietat `garantia` i el mètode `dObj`.
 Per tal que funcioni correctament és important l'ordre de creació. Analitza que passa si no és així i corregeix-ho.
+
 ---
 
-## 🧩 Extensió: Repetir amb **Classes ES6**
+## 🧩 Extensió: Repetir amb **Classes ES6+**
 
 Per consolidar l’aprenentatge, repeteix l’exercici 2 fent servir la sintaxi moderna:
 
