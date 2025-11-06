@@ -1,49 +1,39 @@
 //e) Herència
 
-class General {
-  constructor() {
-    this.garantia = 1;
-  }
-  dObj() {
-    dObj(this);
-  };
+function General() {
+  this.garantia = 1;
+};
+General.prototype.dObj = function () {
+  dObj(this);
 };
 // ---------------- a) Constructors i instàncies ---------------- 
 // a.1 Funcions constructores
-// incorporem l'herència amb extends
-class Fabricant extends General {
-  constructor(nom, comercial, ciutat, telf) {
-    super();
-    this.nom = nom;
-    this.comercial = comercial;
-    this.ciutat = ciutat;
-    this.telf = telf;
-    this.telfEmerg = 112;
 
-  }
+function Fabricant(nom, comercial, ciutat, telf) {
+  this.nom = nom;
+  this.comercial = comercial;
+  this.ciutat = ciutat;
+  this.telf = telf;
+  this.telfEmerg = 112;
+  General.call(this);
 };
 
-class Distribuidor extends General {
-  constructor(nom, ciutat, telf, fabricant) {
-    super();
-    this.nom = nom;
-    this.ciutat = ciutat;
-    this.telf = telf;
-    this.fabricant = fabricant;
-
-  };
+function Distribuidor(nom, ciutat, telf, fabricant) {
+  this.nom = nom;
+  this.ciutat = ciutat;
+  this.telf = telf;
+  this.fabricant = fabricant;
+  General.call(this);
 };
 
-class Equip extends General {
-  constructor(nom, model, fabricant, distribuidor, potencia) {
-    super();
-    this.nom = nom;
-    this.model = model;
-    this.fabricant = fabricant;
-    this.distribuidor = distribuidor;
-    this.potencia = potencia;
+function Equip(nom, model, fabricant, distribuidor, potencia) {
 
-  };
+  this.nom = nom;
+  this.model = model;
+  this.fabricant = fabricant;
+  this.distribuidor = distribuidor;
+  this.potencia = potencia;
+  General.call(this);
 };
 
 
@@ -60,6 +50,7 @@ const dObj_s = function (obj) {
 function dObj(obj) {
   let msg = "Objecte:";
   for (const prop in obj) {
+    // if(true){
     if (Object.prototype.hasOwnProperty.call(obj, prop)) {
       const valor = obj[prop];
       if (typeof valor !== "function") {
@@ -213,10 +204,17 @@ console.log("després delete planxa.dataCompra (instància) ->", ('dataCompra' i
 delete Equip.prototype.dataCompra;
 console.log("després delete Equip.prototype.dataCompra ->", ('dataCompra' in Equip.prototype));
 
-/* ---------------- e) Herència via extends ---------------- */
-console.log("\n== (e) Herència via extends ==");
+/* ---------------- e) Herència via prototype ---------------- */
+console.log("\n== (e) Herència via prototype ==");
 
 
+// IMPORTANT: establir la cadena prototipal *abans* de crear noves instàncies que la necessitin
+Fabricant.prototype = Object.create(General.prototype);
+Fabricant.prototype.constructor = Fabricant;
+Distribuidor.prototype = Object.create(General.prototype);
+Distribuidor.prototype.constructor = Distribuidor;
+Equip.prototype = Object.create(General.prototype);
+Equip.prototype.constructor = Equip;
 
 // Reafegir mètode dProp a prototip d'Equip (perquè hem reassignat el prototype)
 Equip.prototype.dProp = function (prop) { console.log(`${prop}: ${this[prop]}`); };
