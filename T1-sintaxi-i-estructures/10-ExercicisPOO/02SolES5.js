@@ -50,7 +50,7 @@ const dObj_s = function (obj) {
 function dObj(obj) {
   let msg = "Objecte:";
   for (const prop in obj) {
-    // if(true){
+
     if (Object.prototype.hasOwnProperty.call(obj, prop)) {
       const valor = obj[prop];
       if (typeof valor !== "function") {

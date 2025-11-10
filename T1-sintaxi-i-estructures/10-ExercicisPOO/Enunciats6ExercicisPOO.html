@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Enunciats6ExercicisPOO.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<h1 id="exercicis-poo-prototips-i-classes-en-js">Exercicis POO: Prototips i Classes en JS</h1>
+<h2 id="1-objectes-i-constructors">1. Objectes i constructors</h2>
+<p><strong>Objectiu:</strong> comprendre com definir objectes i constructors amb <code>prototype</code>.</p>
+<h3 id="activitat">Activitat</h3>
+<ol>
+<li>
+<p>Crea un objecte <code>rectangle1</code> amb dues propietats (<code>costat1</code>, <code>costat2</code>) i dos mètodes que calculin:</p>
+<ul>
+<li><code>area()</code> → producte dels costats</li>
+<li><code>perimetre()</code> → suma doble dels costats<br>
+Prova els mètodes amb els valors 2 i 3.</li>
+</ul>
+</li>
+<li>
+<p>Defineix una <strong>funció constructora</strong> <code>Rectangle2</code> amb paràmetres pels costats i crea una instància <code>rectangle2</code>.</p>
+</li>
+<li>
+<p>Defineix una constructora buida <code>Rectangle3</code> i afegeix-hi <strong>via <code>prototype</code></strong>:</p>
+<ul>
+<li>dues propietats per defecte (<code>costat1 = 10</code>, <code>costat2 = 20</code>)</li>
+<li>els mètodes <code>area</code> i <code>perimetre</code>.<br>
+Crea una instància <code>rectangle3</code> i comprova el funcionament.</li>
+</ul>
+</li>
+<li>
+<p>Modifica els valors de <code>rectangle3</code> a 4 i 5 i comprova que els càlculs segueixen sent correctes.</p>
+</li>
+</ol>
+<hr>
+<h2 id="2-es5-%E2%80%93-classes-i-inst%C3%A0ncies-fabricant-distribu%C3%AFdor-equip">2. ES5 – Classes i instàncies: <em>Fabricant, Distribuïdor, Equip</em></h2>
+<p><strong>Objectiu:</strong> practicar la relació entre objectes mitjançant propietats i mètodes.</p>
+<h3 id="a-constructors-i-inst%C3%A0ncies">a) Constructors i instàncies</h3>
+<ol>
+<li>Defineix les constructores següents:</li>
+</ol>
+<pre class="hljs"><code><div><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">Fabricant</span>(<span class="hljs-params">nom, comercial, ciutat, telf</span>) </span>{
+  <span class="hljs-keyword">this</span>.nom = nom;
+  <span class="hljs-keyword">this</span>.comercial = comercial;
+  <span class="hljs-keyword">this</span>.ciutat = ciutat;
+  <span class="hljs-keyword">this</span>.telf = telf;
+  <span class="hljs-keyword">this</span>.telfEmerg = <span class="hljs-number">112</span>;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">Distribuidor</span>(<span class="hljs-params">nom, ciutat, telf, fabricant</span>) </span>{
+  <span class="hljs-keyword">this</span>.nom = nom;
+  <span class="hljs-keyword">this</span>.ciutat = ciutat;
+  <span class="hljs-keyword">this</span>.telf = telf;
+  <span class="hljs-keyword">this</span>.fabricant = fabricant;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">Equip</span>(<span class="hljs-params">nom, model, fabricant, distribuidor, potencia</span>) </span>{
+  <span class="hljs-keyword">this</span>.nom = nom;
+  <span class="hljs-keyword">this</span>.model = model;
+  <span class="hljs-keyword">this</span>.fabricant = fabricant;
+  <span class="hljs-keyword">this</span>.distribuidor = distribuidor;
+  <span class="hljs-keyword">this</span>.potencia = potencia;
+}
+</div></code></pre>
+<ol start="2">
+<li>Crea les instàncies amb les dades següents:</li>
+</ol>
+<ul>
+<li>
+<p><strong>Fabricants:</strong></p>
+<ul>
+<li>'Fagor', 'ComercialF', 'Sant Sebastia', '902105011'</li>
+<li>'Zanussi', 'ComercialZ', 'Saragossa', '902105111'</li>
+<li>'Balay', 'ComercialB',' Sevilla', '902105211'</li>
+</ul>
+</li>
+<li>
+<p><strong>Distribuïdors:</strong></p>
+<ul>
+<li>'Distrib1','Barcelona','931234567', fagor</li>
+<li>'Distrib2','Barcelona','931234568', fagor</li>
+<li>‘Distrib3', 'Girona', '972123456',zanussi</li>
+</ul>
+</li>
+<li>
+<p><strong>Equips:</strong></p>
+<ul>
+<li>'rentadora', 'A24', fagor, distr1, 45</li>
+<li>'planxa', 'E4',balay , distr1, 50</li>
+<li>'aspiradora', 'B48', zanussi, distr1, 30</li>
+<li>'batedora', 'Z10', fagor, distr1, 5</li>
+</ul>
+</li>
+</ul>
+<ol start="3">
+<li>
+<p>Mostra el telèfon del <strong>distribuïdor i fabricant</strong> de la rentadora:<br>
+accedint a la propietat amb:</p>
+<ul>
+<li><strong>notació de punts</strong>,</li>
+<li>i  amb <strong>claudàtors</strong>.</li>
+</ul>
+</li>
+<li>
+<p>Implementa la funció <code>dObj(obj)</code> que mostri dinàmicament les propietats, valors i tipus.</p>
+</li>
+<li>
+<p>Modifica el fabricant de <code>distrib1</code> a <em>Zanussi</em> i comprova el canvi.</p>
+</li>
+<li>
+<p>Canvia el comercial de <em>Zanussi</em> a <code>&quot;Comercial_nou&quot;</code>. Comprova si el distribuïdor manté el valor vell o s’actualitza.</p>
+</li>
+<li>
+<p>Fes una còpia de <code>distr3</code> anomenada <code>distr3b</code> i canvia el seu fabricant a <em>Balay</em>. Verifica que <code>distr3</code> segueix amb <em>Zanussi</em>.</p>
+</li>
+<li>
+<p>Executa <code>fagor = zanussi;</code> i analitza el contingut de <code>fagor.nom</code>. Explica què ha passat (assignació per referència).</p>
+</li>
+<li>
+<p>Comprova si encara existeixen les dades originals de <em>Fagor</em> i restaura-les.</p>
+</li>
+</ol>
+<h3 id="b-arrays-i-m%C3%A8todes">b) Arrays i mètodes</h3>
+<ol start="10">
+<li>Defineix un array <code>arrEquips</code> amb totes les instàncies d’<code>Equip</code>.</li>
+<li>Mostra el contingut amb <code>dObj</code> i observa com tracta els objectes.</li>
+<li>Afegeix un mètode propi <code>imprimir()</code> a <code>arrEquips</code> per mostrar el contingut.</li>
+<li>Defineix dos mètodes:
+<ul>
+<li><code>sortAlf()</code> → ordena per <code>nom</code></li>
+<li><code>sortNum()</code> → ordena per <code>potencia</code></li>
+</ul>
+</li>
+<li>Redefineix-los perquè rebin el camp d’ordenació com a paràmetre.</li>
+</ol>
+<h3 id="c-propietats-i-m%C3%A8todes-nous">c) Propietats i mètodes nous</h3>
+<ol start="15">
+<li>Afegeix <code>temperaturaMax = 100</code> a l’objecte <code>planxa</code>.</li>
+<li>Afegeix la propietat <code>dataCompra</code> a la <strong>classe Equip</strong> via <code>prototype</code> amb valor <code>&quot;no especificada&quot;</code>.  Comprova el valor de la propietat.</li>
+<li>Assigna la data actual a <code>planxa.dataCompra</code> en format  <code>localeDateString</code> i comprova'n el valor.</li>
+<li>Afegeix el mètode <code>dProp(prop)</code> a la classe Equip que mostri el nom i valor d’una propietat.</li>
+</ol>
+<h3 id="d-eliminaci%C3%B3-de-propietats">d) Eliminació de propietats</h3>
+<ol start="19">
+<li>Elimina <code>temperaturaMax</code> de <code>planxa</code> i comprova.</li>
+<li>Elimina <code>dataCompra</code> de <code>planxa</code> i comprova.</li>
+<li>Elimina <code>dataCompra</code> de la classe <code>Equip</code> i comprova.</li>
+</ol>
+<h3 id="e-her%C3%A8ncia-via-prototype">e) Herència via <code>prototype</code></h3>
+<ol start="22">
+<li>
+<p>Defineix una constructora <code>General</code> amb propietat <code>garantia</code> amb valor per defecte 1 i mètode <code>dObj</code> que reutilitza la funció <code>dObj</code> creada al punt 4.</p>
+</li>
+<li>
+<p>Fes que <code>Fabricant</code>, <code>Distribuidor</code> i <code>Equip</code> <strong>heretin</strong> de <code>General</code>.</p>
+</li>
+</ol>
+<p>Comprova que totes les instàncies disposen de la propietat <code>garantia</code> i el mètode <code>dObj</code>.
+Per tal que funcioni correctament és important l'ordre de creació. Analitza que passa si no és així i corregeix-ho.</p>
+<hr>
+<h2 id="%F0%9F%A7%A9-extensi%C3%B3-repetir-amb-classes-es6">🧩 Extensió: Repetir amb <strong>Classes ES6+</strong></h2>
+<p>Per consolidar l’aprenentatge, repeteix l’exercici 2 fent servir la sintaxi moderna:</p>
+<pre class="hljs"><code><div><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">General</span> </span>{
+  <span class="hljs-keyword">constructor</span>() {
+    <span class="hljs-keyword">this</span>.garantia = <span class="hljs-number">1</span>;
+  }
+  dObj() { <span class="hljs-comment">/* ... */</span> }
+}
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Fabricant</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">General</span> </span>{
+  <span class="hljs-keyword">constructor</span>(nom, comercial, ciutat, telf) {
+    <span class="hljs-keyword">super</span>();
+    <span class="hljs-keyword">this</span>.nom = nom;
+    <span class="hljs-keyword">this</span>.comercial = comercial;
+    <span class="hljs-keyword">this</span>.ciutat = ciutat;
+    <span class="hljs-keyword">this</span>.telf = telf;
+  }
+}
+</div></code></pre>
+<p>Compara el comportament amb la versió basada en <code>prototype</code> i comenta:</p>
+<ul>
+<li>avantatges de llegibilitat,</li>
+<li>com es gestiona <code>super()</code> i l’herència,</li>
+<li>si els mètodes de classe s’afegeixen també al <code>prototype</code>.</li>
+</ul>
+<hr>
+
+</body>
+</html>
