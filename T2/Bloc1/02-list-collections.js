@@ -10,8 +10,6 @@ console.log(collection, list);
 // let item3 = collection[3];
 // console.log(item3);
 // collection.array.forEach(element => { console.log(element);
-
-
 // });
 // Uncaught TypeError: can't access property "forEach", collection.array is undefined
 
@@ -29,18 +27,18 @@ console.log(collection, list);
 // let item2 = list[3];
 // console.log(item1,item2);
 
-list.forEach(x=>console.log(x));
+// list.forEach(x=>console.log(x));
 
-// entries, keys i values. 
-// Són ArrayIterator i executant el mètode next podem anar veient els elements
+// // entries, keys i values. 
+// // Són ArrayIterator i executant el mètode next podem anar veient els elements
 // Entrades completes
-// let entries = list.entries();
-// console.log(entries);
-// // Les claus
-// let keys = list.keys();
-// console.log(keys);
-// // Els valors
-// let values = list.values();
-// console.log(values);
+let entries = list.entries();
+console.log(entries);
+// Les claus
+let keys = list.keys();
+console.log(keys);
+// Els valors
+let values = list.values();
+console.log(values);
 // llistem tots els elements
-[...list].forEach(el=>console.log(el));
+// [...list].forEach(el=>console.log(el));

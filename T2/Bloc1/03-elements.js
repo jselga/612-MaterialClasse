@@ -2,7 +2,7 @@ let el  = document.createElement('p');
 el.innerHTML = "Element creat";
 document.body.append(el);
 // el.innerText = "<ul><li>Hola</li></ul>";
-// el.innerHTML = "<ul><li>Hola</li></ul>";
+el.innerHTML = "<ul><li>Hola</li></ul>";
 
 el.style = 'background-color: red; font-weight:bold;';
 el.className='paragraf';
