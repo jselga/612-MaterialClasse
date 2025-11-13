@@ -9,6 +9,7 @@ document.body.prepend(el);
 
 let div = document.createElement('div');
 div.innerText = 'Sóc un text en un <div>';
+
 el.replaceWith(div);
 
 document.body.replaceChild(el,div);
@@ -21,5 +22,5 @@ document.body.insertAdjacentElement('beforeend',div);
 document.body.insertAdjacentElement('afterend',div);
 
 // Mètodes addicionals
-document.body.insertAdjacentHTML();
-document.body.insertAdjacentText();
+// document.body.insertAdjacentHTML();
+// document.body.insertAdjacentText();

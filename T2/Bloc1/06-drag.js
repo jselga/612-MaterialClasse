@@ -6,6 +6,8 @@ function createDraggable() {
     span.draggable = true;
     span.ondragstart = e=>{
         id=e.target.id;
+        console.log(e.target);
+        
     }
     return span;
 }
