@@ -20,6 +20,7 @@
   - [7. Flux complet](#7-flux-complet)
   - [8. Bones pràctiques](#8-bones-pràctiques)
   - [9. Recursos oficials](#9-recursos-oficials)
+  - [Annex: Expressions Regulars (RegEx)](#annex-expressions-regulars-regex)
 
 ---
 
@@ -222,3 +223,4 @@ Tal com es treballarà posteriorment en React.
 📘 https://developer.mozilla.org/en-US/docs/Learn/Forms  
 📘 https://developer.mozilla.org/en-US/docs/Web/API/FormData
 
+## [Annex: Expressions Regulars (RegEx)](./RegEx.md)
