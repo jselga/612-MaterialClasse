@@ -1,10 +1,11 @@
-function Card() {
+function Card(props) {
+    const {body} = props;
   return (
     // es canvia class per className i es passen els estils com a objectes
     // El primer parentesi evalua una variable i el segon és per definir un objecte
     <div className="card" style={{ width: "18rem", height: "12rem" }}>
       <div className="card-body">
-        <CardBody />
+       {body}
       </div>
     </div>
   );
