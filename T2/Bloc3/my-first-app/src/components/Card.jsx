@@ -7,7 +7,7 @@ function Card(props) {
     const {children} = props;
   return (
 
-    <div className="card" style={{ width: "18rem", height: "12rem" }}>
+    <div className="card" style={{ width: "18rem", height: "15rem" }}>
       <div className="card-body">
        {children}
       </div>
@@ -27,9 +27,7 @@ export function CardBody(props) {
       <p className="card-text">
         {text}
       </p>
-      <a href="#" className="btn btn-primary">
-        Go somewhere
-      </a>
+
     </>
   );
 }
