@@ -1,15 +1,24 @@
+/**
+ * 
+ * @param {{children: import("react").ReactNode}} props 
+ * @returns {JSX.Element}
+ */
 function Card(props) {
-    const {body} = props;
+    const {children} = props;
   return (
-    // es canvia class per className i es passen els estils com a objectes
-    // El primer parentesi evalua una variable i el segon és per definir un objecte
+
     <div className="card" style={{ width: "18rem", height: "12rem" }}>
       <div className="card-body">
-       {body}
+       {children}
       </div>
     </div>
   );
 }
+/**
+ * 
+ * @param {{title: string, text:string}} props 
+ * @returns {JSX.Element}
+ */
 export function CardBody(props) {
   const {title, text} = props;
   return (
