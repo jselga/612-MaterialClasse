@@ -1,19 +1,25 @@
 /**
- * 
+ *
  * @param {{data: string []}} props
- * @returns 
+ * @returns
  */
-function List({data}) {
-    
+function List({ data }) {
+  const handleClick = (element) =>{
+     console.log(element)
+    }
   return (
     <div>
       <ul className="list-group">
-        {data.map((el)=>(
-        <li key={el} className="list-group-item">{el}</li>))}
-        {/* <li className="list-group-item">A second item</li>
-        <li className="list-group-item">A third item</li>
-        <li className="list-group-item">A fourth item</li>
-        <li className="list-group-item">And a fifth one</li> */}
+        {data.map((el) => (
+          <li
+            // onClick={() =>console.log(el)}
+            onClick={()=>handleClick(el)}
+            key={el}
+            className="list-group-item"
+          >
+            {el}
+          </li>
+        ))}
       </ul>
     </div>
   );
