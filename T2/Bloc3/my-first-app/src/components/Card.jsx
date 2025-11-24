@@ -7,7 +7,7 @@ function Card(props) {
     const {children} = props;
   return (
 
-    <div className="card" style={{ width: "18rem", height: "15rem" }}>
+    <div className="card" style={{ width: "18rem", height: "20rem" }}>
       <div className="card-body">
        {children}
       </div>
