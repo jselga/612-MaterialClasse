@@ -10,7 +10,7 @@ function App() {
 
   let element='Kolog'
   const addElement = ()=> setData([...data,element]);
-  const delElement = ()=> setData(data.slice(0,-1));
+  const delElement = ()=> setData(data.slice(0,data.length-1));
   return(
   <Card>
     <Button onClick={addElement}>Afegir</Button>

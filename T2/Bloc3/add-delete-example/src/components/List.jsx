@@ -6,12 +6,10 @@ import { useState } from "react";
  * @returns
  */
 function List({ data, onSelect }) {
- 
   const [index, setIndex] = useState(1);
   const handleClick = (i, el) => {
     setIndex(i);
     onSelect(el);
- 
   };
   return (
     <div>

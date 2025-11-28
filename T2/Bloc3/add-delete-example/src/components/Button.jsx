@@ -1,15 +1,9 @@
-function Button({ children, isLoading, onClick }) {
+function Button({ children, onClick }) {
   return (
     <div>
-      <button
-        onClick={onClick}
-        disabled={isLoading}
-        type="button"
-        className={`btn btn-${isLoading ? 'secondary':'primary'}`}
-      >
-        {isLoading ? "Loading..." : children}
+      <button onClick={onClick} type="button" className={`btn btn-primary`}>
+        {children}
       </button>
-
     </div>
   );
 }
