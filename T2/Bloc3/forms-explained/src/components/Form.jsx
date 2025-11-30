@@ -1,23 +1,18 @@
 import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
 import { userSchema } from "../schemas/user";
 function Form() {
   const {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm();
-  // console.log(form);
-  // console.log(register('lastname'));
-  // console.log(formState.errors);
+  } = useForm({ resolver: zodResolver(userSchema) });
+  console.log(errors);
+  
   const onSubmit = (data) => {
-    try {
-      const x = userSchema.parse(data);
-      
-      console.log(x);
-    } catch (error) {
-      console.log(error);
-    }
+    console.log(data);
   };
+
   return (
     <form action="" noValidate onSubmit={handleSubmit(onSubmit)}>
       <div className="mb-3">
@@ -30,6 +25,7 @@ function Form() {
           id="name"
           className="form-control"
         />
+        {errors?.name?.message ?? <p>{errors?.name?.message}</p>}
       </div>
       <div className="mb-3">
         <label htmlFor="lastname" className="form-label">
@@ -41,7 +37,7 @@ function Form() {
           id="lastname"
           className="form-control"
         />
-        
+        {errors?.lastname?.message ?? <p>{errors?.lastname?.message}</p>}
       </div>
 
       <button className="btn btn-primary">Enviar</button>
