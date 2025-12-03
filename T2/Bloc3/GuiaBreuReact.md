@@ -60,3 +60,38 @@ Vite és una eina de desenvolupament ràpida, senzilla i ideal per introduir Rea
 - `src/` — codi principal
 
 ---
+### Exemples de classe
+[Exemple aplicació amb React](my-first-app/): A classe hem anat desenvolupant un projecte bàsic de React on a través dels diferents *commits* hem vist des de la creació de components, passar propietats entre components, gestió d'esdeveniments i estat i renderitzat condicional.  
+
+#### Components rellevants: 
+- Card
+- List
+- CardBody  
+#### Propietats (props):
+- paràmetres: title, text,...
+- children: quan un component pot tenir components fills
+- funcions: passar funcions com a propietats: *OnSelect*
+
+#### Esdeveniments
+Gestió d'esdeveniments predefinits com **onClick** i maneig amb **handleClick**
+
+#### Gestió d'estat (useState)
+```jsx
+const [variable,setVariable]=useState(valorInicial);
+```
+[React API Reference - useState](https://react.dev/reference/react/useState)
+
+#### Renderitzat condicional
+Mostrar contingut segons variables:
+```jsx
+list.length !== 0 && (
+    <List data={list} onSelect={handleSelect} />
+```
+
+[Exemple Botó amb canvi segons estat](button-example/): Exercici de classe on el botó canvia de contingut i estil segons l'estat  
+
+![alt text](ExempleButtonCaptura1.png)![alt text](ExempleButtonCaptura2.png)
+
+[Exemple Afegir i eliminar elements](add-delete-example//): Exercici de classe on el podem afegir o eliminar contingut a una llista.   
+
+![alt text](ExempleAfegirEliminarCaptura1.png)
