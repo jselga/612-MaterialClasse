@@ -1,32 +1,25 @@
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { userSchema } from "../schemas/user";
+import { userSchema } from "../schemas/userSchema";
+import Input from "./Input";
+
 function Form() {
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm({ resolver: zodResolver(userSchema) });
-  console.log(errors);
-  
+  // console.log(errors);
+
   const onSubmit = (data) => {
     console.log(data);
   };
 
   return (
     <form action="" noValidate onSubmit={handleSubmit(onSubmit)}>
-      <div className="mb-3">
-        <label htmlFor="name" className="form-label">
-          Nom
-        </label>
-        <input
-          {...register("name")}
-          type="text"
-          id="name"
-          className="form-control"
-        />
-        {errors?.name?.message ?? <p>{errors?.name?.message}</p>}
-      </div>
+      <Input name="name" type="text" register={register} error={errors.name} placeholder="Escriu el teu nom...">
+      Nom
+      </Input>
       <div className="mb-3">
         <label htmlFor="lastname" className="form-label">
           Cognom
