@@ -37,24 +37,26 @@ Construir una aplicació senzilla de **Gestor de Tasques** utilitzant:
 - **Bootstrap** per a l'estil visual (o altres)
 - **React Hook Form (RHF)** per a la gestió del formulari
 - **Zod** per a les validacions
-- **localStorage** per guardar les dades de manera persistent
+- **localStorage** per guardar les dades de manera persistent (extres)
 
 L'aplicació ha de permetre:
 1. **Crear una tasca** mitjançant un formulari validat
 2. **Llistar totes les tasques creades**
 3. **Marcar una tasca com a feta** (toggle)
 4. **Eliminar una tasca**
-5. **Persistir les dades** a `localStorage` perquè no es perdin en refrescar la pàgina
+5. **Persistir les dades** a `localStorage` perquè no es perdin en refrescar la pàgina (extres)
 
 ---
 
 ## Exemples d'implementació UI
-*Possible mockup del formulari*
+*Possible mockup del formulari* 
+
 ![taskForm mockup](taskFormMockup.png)
 
-*Possible mockup del llistat*
+*Possible mockup del llistat:*
 ![taskList mockup](taskListMockup.png)
-
+ *Les imatges són orientatives; no cal replicar exactament l’estil. Es poden adaptar colors, mides i distribució sempre que es mantinguin els camps obligatoris i la lògica del formulari i la llista.*
+ 
 ---
 
 ## Camps del formulari i validacions obligatòries
@@ -122,7 +124,7 @@ Per obtenir la qualificació base (fins a 7 punts), l'aplicació ha de complir:
 - Canviar l'estat de la tasca amb un botó o checkbox
 
 ### ✔ **Eliminar tasques**
-- Botó que les elimina de la llista i del localStorage
+- Botó que les elimina de la llista i del localStorage (si es fa l'extra)
 
 
 ---
@@ -185,7 +187,7 @@ Els punts següents són orientatius i serveixen perquè l'alumne entengui què 
 
 ## Lliurament
 L'alumne ha de lliurar:
-1. Enllaç al repositori o ZIP del projecte (sense node-modules)
+1. Enllaç al repositori o ZIP del projecte (sense node_modules)
 2. README complet
 ---
 ## Requisits per agilitzar el testeig i preparació de l'entorn
