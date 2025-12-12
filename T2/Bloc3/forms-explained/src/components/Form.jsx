@@ -17,22 +17,23 @@ function Form() {
 
   return (
     <form action="" noValidate onSubmit={handleSubmit(onSubmit)}>
-      <Input name="name" type="text" register={register} error={errors.name} placeholder="Escriu el teu nom...">
-      Nom
+      <Input
+        name="name"
+        type="text"
+        register={register}
+        error={errors.name}
+        placeholder="Escriu el teu nom..."
+      >
+        Nom
       </Input>
-      <div className="mb-3">
-        <label htmlFor="lastname" className="form-label">
-          Cognom
-        </label>
-        <input
-          {...register("lastname")}
-          type="text"
-          id="lastname"
-          className="form-control"
-        />
-        {errors?.lastname?.message ?? <p>{errors?.lastname?.message}</p>}
-      </div>
-
+      <Input
+        name="lastname"
+        register={register}
+        error={errors.lastname}
+        maxLength={15}
+      >
+        Cognom
+      </Input>
       <button className="btn btn-primary">Enviar</button>
     </form>
   );
