@@ -13,6 +13,7 @@ promesa1.then(valor => {
     }
     return Promise.reject('Valor menor a 10')
     // return Promise.resolve(555)
+    
 
 }).then((valor2) => {
     console.log('segona promesa');

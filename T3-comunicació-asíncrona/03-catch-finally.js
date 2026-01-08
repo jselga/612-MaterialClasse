@@ -1,5 +1,5 @@
 let promesa1 = new Promise((res, rej) => {
-    rej(12);
+    res(12);
 });
 
 let promesa2 = new Promise((res, rej) => {
@@ -13,6 +13,8 @@ promesa1.then(valor => {
     }
 
 }).then((valor2) => {
+    console.log(valor2);
+
     return valor2;
 
 })

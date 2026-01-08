@@ -3,7 +3,7 @@ let promesa1 = new Promise((res,rej)=>{
 });
 
 let promesa2 = new Promise((res,rej)=>{
-    res(15);
+    rej(15);
 });
 
 promesa1.then( valor =>{
@@ -11,6 +11,7 @@ promesa1.then( valor =>{
    if (valor >10) {
     return promesa2;
    }
+   
     
 }).then((valor2)=>{
     console.log('la segona promesa',valor2);
