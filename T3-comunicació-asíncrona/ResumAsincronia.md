@@ -220,8 +220,12 @@ API pública amb dades reals de Pokémon.
 - Ideal per:
   - llistes
   - detalls
-  - relacions entre recursos
-
+  - relacions entre recursos  
+  
+Exemple de FrontEnd Sobre PokeApi:
+- 🎞️ Video Tutorial: [
+Como CONSUMIR una API como un PRO con JavaScript! Poke Api Tutorial ](https://www.youtube.com/watch?v=gQ-1qUcWYpI)
+- 🐙💻 Codi font a GitHub: [Ledyba-Dev/pokemon_api_tutorial_code](https://github.com/Ledyba-Dev/pokemon_api_tutorial_code/tree/main)
 > Aquestes APIs permeten practicar fetch sense necessitat de backend propi.  
 
 Altres APIs públiques:
