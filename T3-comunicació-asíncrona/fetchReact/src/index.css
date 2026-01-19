@@ -12,6 +12,20 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+.opening{
+  font-size: large;
+  font-style: bold;
+  font-family: 'Courier New', Courier, monospace;
+  
+}
+@counter-style space-counter {
+  symbols: "\1F680" "\1F6F8" "\1F6F0" "\1F52D";
+  suffix: " ";
+  
+}
+ul{
+  list-style-type: space-counter;
+}
 
 a {
   font-weight: 500;
