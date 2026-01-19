@@ -1,10 +1,11 @@
 import "./App.css";
-import { useFetch } from "./useFetch";
+import { useAxios } from "./hooks/useAxios";
+import { useFetch } from "./hooks/useFetch";
 
 function App() {
   // const baseUrl = 'https://jsonplaceholder.typicode.com';
   // const baseUrl = "https://swapi.info/api/";
-  const baseUrl = "https://api.api-onepiece.com/v2/fruits/en";
+  const baseUrl = "https://api.api-onepiece.com/v2/fruits/e";
   const url = `${baseUrl}`;
   const name = "name";
   const id = "id";
