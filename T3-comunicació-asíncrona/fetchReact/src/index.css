@@ -24,7 +24,7 @@
   
 }
 ul{
-  list-style-type: space-counter;
+  list-style-type: none;
 }
 
 a {
