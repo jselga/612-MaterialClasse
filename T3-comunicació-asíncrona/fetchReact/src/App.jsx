@@ -4,12 +4,12 @@ import { useFetch } from "./hooks/useFetch";
 
 function App() {
   // const baseUrl = 'https://jsonplaceholder.typicode.com';
-  // const baseUrl = "https://swapi.info/api/";
-  const baseUrl = "https://api.api-onepiece.com/v2/fruits/e";
-  const url = `${baseUrl}`;
-  const name = "name";
+  const baseUrl = "https://swapi.info/api/";
+  // const baseUrl = "https://api.api-onepiece.com/v2/fruits/en";
+  const url = `${baseUrl}/films`;
+  const name = "title";
   const id = "id";
-  const other = "description";
+  const other = "opening_crawl";
   const { data, loading, error, handleCancelRequest } = useFetch(url);
   return (
     <div className="App">
@@ -23,10 +23,7 @@ function App() {
             <li key={el[id]}>
               {" "}
               <img src={el.filename} alt="akuma no mi image" />
-              <h1>
-                {el[name]}{" "}
-              </h1>{" "}
-              <br />
+              <h1>{el[name]} </h1> <br />
               <span className="opening">{el[other]}</span>
             </li>
           ))}
