@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Enviar Posts</h1>
+    <!-- <div id="posts"></div>
+  <div id="detail"></div> -->
+    <style>
+      a {
+        color: indigo;
+        font-weight: bold;
+        text-decoration: none;
+      }
+    </style>
+    <form id="updateForm">
+      <input type="number" id="postId" placeholder="ID del post" />
+      <input type="text" id="title" placeholder="Nou títol" />
+      <textarea id="body" placeholder="Nou contingut"></textarea>
+
+      <button id="btnPatch">PATCH</button>
+      <button id="btnPut">PUT</button>
+
+      <div id="info"></div>
+    </form>
+    <div id="info"></div>
+
+    <script src="E4b.js"></script>
+  </body>
+</html>
